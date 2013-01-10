@@ -14,9 +14,9 @@
     <modules>
         <module>facebook</module>
         <module>tests</module>
-        <module>examples/simple</module>
+        <!--module>examples/simple</module>
         <module>examples/stream</module>
-        <module>examples/Hackbook</module>
+        <module>examples/Hackbook</module-->
     </modules>
 
     <properties>
