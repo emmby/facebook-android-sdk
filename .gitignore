@@ -11,3 +11,15 @@
 gen
 target
 bin
+local.properties
+.arc/
+bin/
+gen/
+out/
+facebook/doc/
+facebook/lint.xml
+facebook/tests/lint.xml
+facebook/tests/assets/config.json
+.idea/workspace.xml
+.idea/dictionaries/
+.idea/inspectionProfiles/
