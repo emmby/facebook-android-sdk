@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata>
+  <groupId>com.simpligility.android.facebook</groupId>
+  <artifactId>android-facebook-api</artifactId>
+  <versioning>
+    <versions>
+      <version>3.0-emmby-SNAPSHOT</version>
+    </versions>
+    <lastUpdated>20130111001033</lastUpdated>
+  </versioning>
+</metadata>

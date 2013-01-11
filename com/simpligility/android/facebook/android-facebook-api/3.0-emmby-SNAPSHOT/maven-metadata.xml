@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<metadata modelVersion="1.1.0">
+  <groupId>com.simpligility.android.facebook</groupId>
+  <artifactId>android-facebook-api</artifactId>
+  <version>3.0-emmby-SNAPSHOT</version>
+  <versioning>
+    <snapshot>
+      <timestamp>20130111.001033</timestamp>
+      <buildNumber>1</buildNumber>
+    </snapshot>
+    <lastUpdated>20130111001033</lastUpdated>
+    <snapshotVersions>
+      <snapshotVersion>
+        <extension>apklib</extension>
+        <value>3.0-emmby-20130111.001033-1</value>
+        <updated>20130111001033</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <extension>pom</extension>
+        <value>3.0-emmby-20130111.001033-1</value>
+        <updated>20130111001033</updated>
+      </snapshotVersion>
+      <snapshotVersion>
+        <classifier>sources</classifier>
+        <extension>jar</extension>
+        <value>3.0-emmby-20130111.001033-1</value>
+        <updated>20130111001033</updated>
+      </snapshotVersion>
+    </snapshotVersions>
+  </versioning>
+</metadata>
