@@ -26,6 +26,7 @@ import android.content.pm.ResolveInfo;
 import android.content.pm.Signature;
 import android.net.Uri;
 import android.os.*;
+import android.util.Log;
 import com.facebook.*;
 import com.facebook.Session.StatusCallback;
 
@@ -613,9 +614,20 @@ public class Facebook {
             }
 
             if (connection != null) {
-                // The refreshToken function should be called rarely,
-                // so there is no point in keeping the binding open.
-                connection.applicationsContext.unbindService(connection);
+                try {
+
+                    // The refreshToken function should be called rarely,
+                    // so there is no point in keeping the binding open.
+                    connection.applicationsContext.unbindService(connection);
+
+                } catch( IllegalArgumentException e ) {
+                    // https://bugs.groupondev.com/browse/ANDCON-4110
+                    // We're seeing massive crashes (1500-2000 per day)
+                    // in our app due to IllegalArgumentException: Service not registered:
+                    // com.facebook.android.Facebook$TokenRefreshServiceConnection
+                    // Ignoring this error as a hack.
+                    Log.e("Facebook", "Error unbinding service", e );
+                }
             }
         }
     }
