@@ -5,13 +5,19 @@
     <modelVersion>4.0.0</modelVersion>
     <groupId>com.simpligility.android.facebook</groupId>
     <artifactId>android-facebook-api</artifactId>
-    <version>1.2.1-emmby</version>
+    <version>3.0-emmby-SNAPSHOT</version>
     <packaging>apklib</packaging>
 
     <!-- required by Android Maven Plugin, also ensures other plugins are pretty new -->
     <prerequisites>
         <maven>3.0.3</maven>
     </prerequisites>
+
+    <properties>
+        <!-- github server corresponds to entry in ~/.m2/settings.xml -->
+        <github.global.server>github</github.global.server>
+    </properties>
+
 
     <dependencies>
         <dependency>
@@ -92,7 +98,40 @@
                     </execution>
                 </executions>
             </plugin>
+            <plugin>
+                <groupId>com.github.github</groupId>
+                <artifactId>site-maven-plugin</artifactId>
+                <version>0.7</version>
+                <configuration>
+                    <message>Maven artifacts for ${project.version}</message>
+                    <noJekyll>true</noJekyll>
+                    <outputDirectory>${project.build.directory}/mvn-repo</outputDirectory>
+                    <branch>refs/heads/mvn-repo</branch>
+                    <includes><include>**/*</include></includes>
+                    <repositoryName>facebook-android-sdk</repositoryName>
+                    <repositoryOwner>emmby</repositoryOwner>
+                </configuration>
+                <executions>
+                  <!-- run site-maven-plugin's 'site' target as part of the build's normal 'deploy' phase -->
+                  <execution>
+                    <goals>
+                      <goal>site</goal>
+                    </goals>
+                    <phase>deploy</phase>
+                  </execution>
+                </executions>
+            </plugin>
         </plugins>
     </build>
+
+
+    <distributionManagement>
+        <repository>
+            <id>internal.repo</id>
+            <name>Temporary Staging Repository</name>
+            <url>file://${project.build.directory}/mvn-repo</url>
+        </repository>
+    </distributionManagement>
+
 </project>
 
